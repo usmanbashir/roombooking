@@ -36,6 +36,9 @@
     "react": "^16.0.0",
     "react-dev-utils": "^4.1.0",
     "react-dom": "^16.0.0",
+    "react-flatpickr": "^3.6.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "sass-rem": "^2.0.0",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.75.1",
@@ -97,5 +100,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.2"
   }
 }

@@ -1,27 +1,17 @@
-import React, { Component } from 'react';
-import { Container, Grid, Header as Heading, Segment, Divider } from 'semantic-ui-react';
-import Header from './Header';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as actionCreators from '../../actions/actionCreators';
+import Main from './Main';
 import './App.css';
 
-export default class App extends Component {
-  render() {
-    return (
-      <Container>
-        <Grid>
-          <Header />
-          <Divider className="app-header-sep" />
-
-          <Grid.Row>
-            <Grid.Column width="16">
-              <Segment textAlign="center" raised>
-                <Heading>
-                  Book a meeting room without hassle.
-                </Heading>
-              </Segment>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    );
-  }
+function mapStateToProps(state) {
+  return { searchDate: state.searchDate };
 }
+
+function mapDispachToProps(dispatch) {
+  return bindActionCreators(actionCreators, dispatch);
+}
+
+const App = connect(mapStateToProps, mapDispachToProps)(Main);
+
+export default App;
