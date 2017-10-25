@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import { Container, Grid, Divider } from 'semantic-ui-react';
+import { Container, Divider } from 'semantic-ui-react';
 import Header from './Header';
-import SearchDate from '../../components/SearchDate/SearchDate';
+import SearchAndFilters from './SearchAndFilters';
+import ActiveResponsiveModes from '../../components/utility/ActiveResponsiveModes';
 
 export default class Main extends Component {
   render() {
     return (
       <Container>
-        <Grid>
-          <Header />
-          <Divider className="app-header-sep" />
-          <SearchDate searchDate={this.props.searchDate} changeDate={this.props.changeDate} />
-        </Grid>
+        <Header />
+        <Divider />
+        <SearchAndFilters {...this.props} />
+        <ActiveResponsiveModes />
       </Container>
     );
   }
