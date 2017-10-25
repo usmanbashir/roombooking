@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Grid, Header, Image, Segment } from 'semantic-ui-react';
-import logo from '../../images/1aim-logo.svg';
+import { Container, Grid, Header as Heading, Segment, Divider } from 'semantic-ui-react';
+import Header from './Header';
 import './App.css';
 
 export default class App extends Component {
@@ -8,18 +8,15 @@ export default class App extends Component {
     return (
       <Container>
         <Grid>
+          <Header />
+          <Divider className="app-header-sep" />
+
           <Grid.Row>
-            <Grid.Column mobile="16" textAlign="center" className="App-header">
-              <Header as="h1">
-                <Image src={logo} verticalAlign="top" />
-                Room Booking
-              </Header>
-            </Grid.Column>
-          </Grid.Row>
-          <Grid.Row>
-            <Grid.Column mobile="16">
-              <Segment textAlign="center">
-                Book a meeting room without hassle.
+            <Grid.Column width="16">
+              <Segment textAlign="center" raised>
+                <Heading>
+                  Book a meeting room without hassle.
+                </Heading>
               </Segment>
             </Grid.Column>
           </Grid.Row>
