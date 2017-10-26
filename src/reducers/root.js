@@ -1,6 +1,6 @@
 import { combineReducers} from 'redux';
 import searchDate from './searchDate';
+import searchRoomName from './searchRoomName';
+import searchAvaiableNow from './searchAvaiableNow';
 
-const rootReducer = combineReducers({ searchDate });
-
-export default rootReducer;
+export default combineReducers({ searchDate, searchRoomName, searchAvaiableNow });

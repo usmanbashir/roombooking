@@ -5,7 +5,11 @@ import Main from './Main';
 import './App.css';
 
 function mapStateToProps(state) {
-  return { searchDate: state.searchDate };
+  return {
+    searchDate: state.searchDate,
+    searchRoomName: state.searchRoomName,
+    searchAvaiableNow: state.searchAvaiableNow,
+  };
 }
 
 function mapDispachToProps(dispatch) {
