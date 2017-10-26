@@ -1,3 +1,4 @@
 export const SEARCH_DATE_CHANGE             = 'SEARCH_DATE_CHANGE';
 export const SEARCH_ROOM_NAME_CHANGE        = 'SEARCH_ROOM_NAME_CHANGE';
 export const SEARCH_AVAIABLE_NOW_CHANGE     = 'SEARCH_AVAIABLE_NOW_CHANGE';
+export const SEARCH_ROOMS                   = 'SEARCH_ROOMS';
