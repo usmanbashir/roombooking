@@ -2,6 +2,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/actionCreators';
 import Main from './Main';
+import { getAvaiableNowRoomsFilteredByRoomName } from '../../selectors/searchSelectors';
 import './App.css';
 
 function mapStateToProps(state) {
@@ -9,6 +10,7 @@ function mapStateToProps(state) {
     searchDate: state.searchDate,
     searchRoomName: state.searchRoomName,
     searchAvaiableNow: state.searchAvaiableNow,
+    rooms: getAvaiableNowRoomsFilteredByRoomName(state),
   };
 }
 
