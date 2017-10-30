@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 
+const BASE_TEN = 10;
 const getAvaiableNowFilter = (state) => state.searchAvaiableNow;
 const getRooms = (state) => state.rooms;
 
@@ -18,13 +19,13 @@ export const getAvaiableNowRooms = createSelector(
           let endingTime = new Date();
 
           startingTime.setHours(
-            parseInt(timeRange[0].split(':')[0], 10),   // Hour
-            parseInt(timeRange[0].split(':')[1], 10),   // Minute
+            parseInt(timeRange[0].split(':')[0], BASE_TEN),   // Hour
+            parseInt(timeRange[0].split(':')[1], BASE_TEN),   // Minute
             0
           );
           endingTime.setHours(
-            parseInt(timeRange[1].split(':')[0], 10),   // Hour
-            parseInt(timeRange[1].split(':')[1], 10),   // Minute
+            parseInt(timeRange[1].split(':')[0], BASE_TEN),   // Hour
+            parseInt(timeRange[1].split(':')[1], BASE_TEN),   // Minute
             0
           );
 
@@ -43,6 +44,6 @@ const getRoomName = (state) => state.searchRoomName;
 // along with their current availability
 export const getAvaiableNowRoomsFilteredByRoomName = createSelector(
   [getAvaiableNowRooms, getRoomName],
-  (avaiableRooms, roomName) =>
-    avaiableRooms.filter(room => room.name.toLowerCase().indexOf(roomName.toLowerCase()) > -1)
+  (availableRooms, roomName) =>
+    availableRooms.filter(room => room.name.toLowerCase().indexOf(roomName.toLowerCase()) > -1)
 )
