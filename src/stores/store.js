@@ -1,15 +1,23 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 import rootReducer from '../reducers/root';
-import rooms from '../data/rooms';
 
 const initialState = {
-  searchDate: (new Date()).toLocaleDateString(),
+  searchDate: Date.now(),
   searchRoomName: '',
   searchAvaiableNow: false,
-  rooms,
+  rooms: [],
+  isFetchingData: false,
 };
 
-const store = createStore(rootReducer, initialState, devToolsEnhancer());
+const store = createStore(
+  rootReducer,
+  initialState,
+  compose(
+    applyMiddleware(thunk),
+    devToolsEnhancer(),
+  )
+);
 
 export default store;

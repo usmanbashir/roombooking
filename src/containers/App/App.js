@@ -11,6 +11,7 @@ function mapStateToProps(state) {
     searchRoomName: state.searchRoomName,
     searchAvaiableNow: state.searchAvaiableNow,
     rooms: getAvaiableNowRoomsFilteredByRoomName(state),
+    isFetchingData: state.isFetchingData,
   };
 }
 
