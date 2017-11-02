@@ -51,9 +51,6 @@ export function fetchRooms(date) {
 
     return fetch(API_PATH + 'getrooms/', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
       body: JSON.stringify({
         date: date
       })
